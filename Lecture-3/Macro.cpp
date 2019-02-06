@@ -10,6 +10,7 @@ using namespace std;
 
 int main(){
 	ll a;
+	ll b;
 	// PI=3.142; // error
 	int r;
 	// cin>>r;
