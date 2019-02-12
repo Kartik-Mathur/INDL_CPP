@@ -12,7 +12,6 @@ int main(){
 			continue;
 		}
 		cout<<i<<" ";
-
 	}
 	cout<<endl;
 	int i=1;
@@ -21,7 +20,6 @@ int main(){
 			i++; // Incase of while loop updation is required before continue
 			continue;
 		}
-
 		cout<<i<<" ";
 		i++;
 	}
