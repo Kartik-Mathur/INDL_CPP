@@ -3,6 +3,12 @@
 using namespace std;
 
 int main(){
+
+	int c[1000]={1}; // THIS DOESNOT ALLOCATE EACH INDEX WITH VALUE 1
+	int d[1000]={0}; // THIS ALLOCATES EACH BUCKET WITH 0
+
+
+
 	int b[]={1,2,3,4,5,6,7}; // Initialization of the array
 	cout<<sizeof(b)<<endl;
 	int n=sizeof(b)/sizeof(int);
@@ -13,6 +19,13 @@ int main(){
 
 	int a[1000]={6,7,8,9,10};
 	cout<<sizeof(a)/sizeof(int)<<endl;
+
+// THIS SHOULD NOT BE DONE
+
+	// int n;
+	// cin>>n;
+	// int a[n];
+
 	// for(int i=0;i<100;i++){
 	// 	cout<<a[i]<<" ";
 	// }
