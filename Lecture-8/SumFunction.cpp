@@ -25,7 +25,6 @@ bool Great(int a,int b){
 }
 
 void CheckPrime(int x){
-
 	int i;
 	for(i=2;i<x;i++){
 		if(x%i==0){
@@ -53,7 +52,7 @@ int main(){
 
 	int ans=sum2(x,y); // sum2(x,y): returned ans so store it in a bucket
 	cout<<ans<<endl;
-	
+
 	if(Great(x,y)==true){
 		cout<<x<<" is greater than "<<y<<endl;
 	}
