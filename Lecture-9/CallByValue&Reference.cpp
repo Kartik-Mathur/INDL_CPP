@@ -9,6 +9,7 @@ void fun(int &x,int &y){
 	x=x-y;
 	cout<<"In fun x : "<<x<<" y : "<<y<<endl;
 }
+
 int main(){
 	int a=10,b=20;
 	fun(a,b);
