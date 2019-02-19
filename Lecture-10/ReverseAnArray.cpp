@@ -34,7 +34,8 @@ void Reverse1(int *a,int n){
 // int *fun1(){
 // 	int i=100;
 
-// 	return &i;
+// 	return &i;	
+	// should not be done
 // }
 
 
