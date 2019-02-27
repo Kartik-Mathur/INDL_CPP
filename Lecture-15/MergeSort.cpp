@@ -42,7 +42,6 @@ void MergeSort(int a[],int s,int e){
 	if(s>=e){
 		return;
 	}
-
 	// Divide
 	int x[100],y[100];
 	int mid=(s+e)/2;
