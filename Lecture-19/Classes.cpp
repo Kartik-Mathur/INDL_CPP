@@ -35,6 +35,32 @@ public:
 		seats=4;
 	}
 
+	// COPY CONSTRUCTOR
+	Car(Car &X){ //Car B(A);
+		// cout<<"In Copy Constructor"<<endl;
+		name=new char[strlen(X.name)+1];
+		strcpy(name,X.name);
+		// name=X.name;
+		seats=X.seats;
+		price=X.price;
+		model=X.model;
+	}
+
+
+	// Copy Assignment Operator
+	void operator=(Car X){
+		if(name!=NULL){
+			delete name;
+			name=NULL;
+		}
+		cout<<"In Assignment "<<endl;
+		name=new char[strlen(X.name)+1];
+		strcpy(name,X.name);
+		price=X.price;
+		seats=X.seats;
+		model=X.model;
+	}
+
 	void SetPrice(int p){
 		if(p>100){
 			price=p;
@@ -91,12 +117,22 @@ int main(){
 
 	// Car D("Ford",250);
 	// Car D(A);
-	Car D=A;
+	Car D=A; // COPY CONSTRUCTOR
+	// Car E(D);
+	Car E;
+	E=D;
+	E.name[0]='T';
+
+	A.name[0]='C';
+	// strcpy(A.name,"Mar");
+
+
 	
 	A.print();
 	B.print();
 	C.print();	
 	D.print();
+	E.print();
 
 
 
