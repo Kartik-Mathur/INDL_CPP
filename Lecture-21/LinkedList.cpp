@@ -38,9 +38,9 @@ public:
 
 	void print(){
 		node* temp=head;
-		while(head!=NULL){
-			cout<<head->data<<"-->";
-			head=head->next;
+		while(temp!=NULL){
+			cout<<temp->data<<"-->";
+			temp=temp->next;
 		}
 		cout<<endl;
 	}
@@ -87,6 +87,72 @@ public:
 		}
 	}
 
+	node* search(int key){
+		node* temp=head;
+		while(temp){
+			if(temp->data==key){
+				return temp;
+			}
+			temp=temp->next;
+		}
+
+		return NULL;
+	}
+
+	// DELETION
+	void DeleteAtFront(){
+		if(head==NULL){
+			return;
+		}
+		else if(head->next==NULL){
+			delete head;
+			head=tail=NULL;
+		}
+		else{
+			node* temp=head;
+			head=head->next;
+			delete temp;
+		}
+	}
+
+	void DeleteAtEnd(){
+		if(head==NULL){
+			return;
+		}
+		else if(head->next==NULL){
+			delete head;
+			head=tail=NULL;
+		}
+		else{
+			node* temp=head;
+			while(temp->next!=tail){
+				temp=temp->next;
+			}
+			delete tail;
+			tail=temp;
+			tail->next=NULL;
+		}
+	}
+
+	void DeleteAtMid(int pos){
+		if(pos==0){
+			DeleteAtFront();
+		}
+		else if(pos>=length()){
+			DeleteAtEnd();
+		}
+		else{
+			node* temp=head;
+			int jump=1;
+			while(jump<=pos-1){
+				temp=temp->next;
+				jump++;
+			}
+			node* n=temp->next;
+			temp->next=n->next;
+			delete n;
+		}
+	}
 
 };
 
@@ -100,16 +166,37 @@ int main(){
 	l.InsertAtEnd(1);
 	l.InsertAtEnd(3);
 	l.InsertAtEnd(4);
+	l.InsertAtEnd(5);
+	l.InsertAtEnd(6);
 
 	l.print();
-	// int pos,data;
+	// l.DeleteAtFront();
+	l.DeleteAtFront();
+	int pos,data;
 	// cout<<"Enter data and pos :";
 	// cin>>data>>pos;
 	// l.InsertAtMid(data,pos);
 	l.print();
+	l.DeleteAtEnd();
 	l.print();
+	l.DeleteAtMid(2);
 	l.print();
+	// l.print();
+	// l.print();
+	// int key;
+	// cin>>key;
 
+	// node* ans=l.search(key);
+	// if(ans==NULL){
+	// 	cout<<"Key not Found!"<<endl;
+	// }
+	// else{
+	// 	cout<<ans->data<<endl;
+	// 	// cout<<ans->next->data<<endl;
+	// 	ans->next=NULL;
+	// }
+
+	// l.print();
 
 
 
