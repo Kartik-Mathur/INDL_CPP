@@ -53,6 +53,13 @@ public:
 
 int main(){
 	Vector v;
+	int n;
+	cin>>n;
+	int d;
+	for(int i=0;i<n;i++){
+		cin>>d;
+		v.push_back(d);
+	}
 
 	v.push_back(1);
 	v.push_back(2);
@@ -79,6 +86,7 @@ int main(){
 	cout<<endl;
 
 	cout<<v.capacity()<<endl;
+
 
 
 	return 0;
