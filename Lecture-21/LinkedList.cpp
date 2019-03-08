@@ -154,6 +154,26 @@ public:
 		}
 	}
 
+	node* mid(){
+		if(head==NULL){
+			return NULL;
+		}
+		else if(head->next==NULL){
+			return head;
+		}
+		node* fast=head->next;
+		node* slow=head;
+		while(fast!=NULL){
+			fast=fast->next;
+
+			if(fast!=NULL){
+				fast=fast->next;
+				slow=slow->next;
+			}
+		}
+		return slow;
+	}
+
 };
 
 
@@ -168,19 +188,22 @@ int main(){
 	l.InsertAtEnd(4);
 	l.InsertAtEnd(5);
 	l.InsertAtEnd(6);
+	l.InsertAtEnd(7);
 
 	l.print();
+	node* ans=l.mid();
+	cout<<ans->data<<endl;
 	// l.DeleteAtFront();
-	l.DeleteAtFront();
+	// l.DeleteAtFront();
 	int pos,data;
 	// cout<<"Enter data and pos :";
 	// cin>>data>>pos;
 	// l.InsertAtMid(data,pos);
-	l.print();
-	l.DeleteAtEnd();
-	l.print();
-	l.DeleteAtMid(2);
-	l.print();
+	// l.print();
+	// l.DeleteAtEnd();
+	// l.print();
+	// l.DeleteAtMid(2);
+	// l.print();
 	// l.print();
 	// l.print();
 	// int key;
